@@ -1,0 +1,95 @@
+.main-header-wrapper {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.main-header {
+  @include outer-container;
+  position: relative;
+  top: 0;
+  height: 70px;
+  background-color: white;
+
+  .logo {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    width: 135px;
+    z-index: 1;
+  }
+}
+
+.main-navigation {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 780px;
+  @include transform(translateX(-50%) translateY(-50%));
+  text-align: center;
+
+  a {
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 300;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .logo-spacer {
+    width: 180px;
+  }
+}
+
+.social-navigation {
+  position: absolute;
+  right: 20px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  a {
+    margin-right: 10px;
+  }
+}
+
+
+.page-header {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-image: url('backgrounds/congruent_pentagon_pattern.png');
+  background-size: 80%;
+
+  .content {
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
+    padding: 20px;
+  }
+
+  .title {
+    color: #333;
+    text-align: center;
+    font-size: 3.5em;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    position: relative;
+    margin: 0 auto;
+    max-width: 700px;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.4em;
+  }
+}

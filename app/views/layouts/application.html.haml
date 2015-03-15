@@ -1,0 +1,28 @@
+!!!
+%html
+%head
+  %title ProjectArtuur
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+
+%header.main-header-wrapper
+  .main-header
+    %nav.main-navigation
+      = link_to 'bar', bar_path
+      = link_to 'workshops', workshops_path
+      %a.logo-spacer
+      = link_to 'workspace', workspace_path
+      = link_to 'expo', expo_path
+
+    %nav.social-navigation
+      = link_to image_tag('facebook.png'), 'https://www.facebook.com/ProjectArtuur'
+      = link_to image_tag('instagram.png'), 'http://instagram.com'
+
+    = link_to :root do
+      = image_tag 'logo.png', class: 'logo'
+
+%section.content-wrapper
+  = yield

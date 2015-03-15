@@ -1,0 +1,100 @@
+// Place all the styles related to the bar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+  position: relative;
+  width: 100%;
+  @include calc(height, "100vh - 71px");
+  max-height: 550px;
+  padding: 20px;
+  @include outer-container;
+
+  .cover-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    position: absolute;
+    padding: 40px;
+    @include calc(width, "100% - 40px");
+    top: 50%;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .4);
+    font-size: 2.5em;
+  }
+}
+
+.opening-hours {
+  padding-bottom: 50px;
+
+  .title {
+    text-align: center;
+  }
+}
+
+
+
+.opening-hours-list {
+  margin: 0;
+  padding: 0;
+  @include outer-container;
+
+  .week-days,
+  .weekend-days {
+    width: 100%;
+    text-align: center;
+    @include clearfix();
+  }
+  .day {
+    @include span-columns(3);
+    float: none;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 20px 0;
+    opacity: 0.5;
+
+
+    &.today {
+      background-image: url('today-bg.png');
+      opacity: 1;
+    }
+
+    &.closed {
+      .info {
+        color: rgba(0, 0, 0, .5);
+      }
+    }
+
+    .title {
+      text-transform: uppercase;
+    }
+
+    .info {
+      font-style: italic;
+    }
+  }
+}
+
+.menu-card-wrapper {
+  @include fill-parent;
+  padding: 50px 20px;
+  background-color: #CDEBE3;
+}
+
+.menu-card {
+  @include outer-container;
+
+  img {
+    // @include span-columns(12);
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

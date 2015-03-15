@@ -1,0 +1,37 @@
+.hero
+  = image_tag 'backgrounds/bar.jpg', class: 'cover-image'
+  %h1.title Bar
+
+
+.opening-hours
+  %h2.title Openingsuren
+
+  %ul.opening-hours-list
+    .week-days
+      %li.day.closed{class: ('today' if is_today('monday'))}
+        .title maandag
+        .info gesloten
+      %li.day.closed{class: ('today' if is_today('tuesday'))}
+        .title dinsdag
+        .info gesloten
+      %li.day{class: ('today' if is_today('wednesday'))}
+        .title woensdag
+        .info 10u tot 18u
+      %li.day{class: ('today' if is_today('thursday'))}
+        .title donderdag
+        .info 10u tot 2u
+    .weekend-days
+      %li.day{class: ('today' if is_today('friday'))}
+        .title vrijdag
+        .info 10u tot 2u
+      %li.day{class: ('today' if is_today('saturday'))}
+        .title zaterdag
+        .info 10u tot 2u
+      %li.day{class: ('today' if is_today('sunday'))}
+        .title zondag
+        .info 12u tot 20u
+
+.menu-card-wrapper
+  .menu-card
+    = image_tag 'bar/menu-card-recto.png'
+    = image_tag 'bar/menu-card-verso.png'

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  get 'bar' => 'bar#index', as: :bar
+  get 'workspace' => 'workspace#index', as: :workspace
+  get 'expo' => 'expo#index', as: :expo
+  get 'about' => 'about#index', as: :about
+
+  resources :workshops
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

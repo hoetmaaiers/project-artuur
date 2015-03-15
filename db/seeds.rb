@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Workshop.delete_all
+workshops = Workshop.create([
+  {
+    title: "Lorem"
+  },{
+    title: "Ipsum"
+  },{
+    title: "Dolor"
+  },{
+    title: "Sit amet"
+  },{
+    title: "Quiue testam bleik"
+  }
+])
