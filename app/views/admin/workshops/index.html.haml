@@ -1,0 +1,11 @@
+%h2 New workshop
+
+= render 'form'
+
+%h2 All workshops
+%ul
+- @workshops.each do |workshop|
+  %li
+    = workshop.title
+    = link_to 'edit', edit_admin_workshop_url(workshop)
+    = link_to 'delete', admin_workshop_url(workshop), method: :delete

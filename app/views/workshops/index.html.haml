@@ -4,6 +4,17 @@
     %h2.subtitle
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
 
+%ul
+  - @types.each do |type|
+    %li= type.name
+
+%ul
+  - @audiences.each do |audience|
+    %li= audience.name
+
+
+
+
 %section.page-content
   - @workshops.each do |workshop|
     = link_to workshop, {class: 'workshop-item'} do

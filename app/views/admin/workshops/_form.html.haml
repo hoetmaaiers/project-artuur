@@ -1,0 +1,19 @@
+= form_for [:admin, @workshop] do |f|
+  .field-group
+    = f.label :title
+    = f.text_field :title
+
+  .field-group
+    = f.label :type_list
+    = f.text_field :type_list
+
+  .field-group
+    = f.label :audience_list
+    = f.text_field :audience_list
+
+  .field-group
+    = f.label :type
+    = f.select :type do
+      = options_for_select(['group', 'individual'])
+
+  = f.submit 'create'
