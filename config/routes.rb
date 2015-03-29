@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+
+  devise_for :users
   root 'welcome#index'
   get 'bar' => 'bar#index', as: :bar
   get 'workspace' => 'workspace#index', as: :workspace
   get 'expo' => 'expo#index', as: :expo
   get 'about' => 'about#index', as: :about
 
-  resources :workshops
-
+  get 'admin' => 'admin/workshops#index', as: :admin
   namespace :admin do
     resources :workshops
   end
