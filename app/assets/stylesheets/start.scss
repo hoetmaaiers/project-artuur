@@ -25,4 +25,8 @@
     margin-top: 70px;
     @include shift(2);
   }
+
+  .label {
+    font-family: $basic-title;
+  }
 }

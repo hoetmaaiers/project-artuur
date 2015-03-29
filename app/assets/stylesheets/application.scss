@@ -16,9 +16,11 @@
 // $tablet-small: new-breakpoint(min-width 768px 12);
 // $tablet:       new-breakpoint(min-width 1024px 12);
 @include font-face("nexa_bold", "nexa_bold/nexa-bold", bold);
+@include font-face("basic_title", "basic_title/basictitlefont-webfont", regular);
 
 $nexa-bold: 'nexa_bold', sans-serif;
 $lato: 'Lato', sans-serif;
+$basic-title: 'basic_title', serif;
 
 * {
   box-sizing: border-box;
