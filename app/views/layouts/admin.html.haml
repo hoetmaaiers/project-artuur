@@ -7,6 +7,20 @@
   = csrf_meta_tags
 
 %body
+  %nav.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-2", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#"} Project Artuur
+      #bs-example-navbar-collapse-2.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li.active
+            %a{:href => "#"}
+              Workshops
 
   %p.notice= notice
   %p.alert= alert
