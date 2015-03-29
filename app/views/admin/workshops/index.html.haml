@@ -1,11 +1,21 @@
-%h2 New workshop
+.container
+  %h2 New workshop
 
-= render 'form'
+  = render 'form'
 
-%h2 All workshops
-%ul
-- @workshops.each do |workshop|
-  %li
-    = workshop.title
-    = link_to 'edit', edit_admin_workshop_url(workshop)
-    = link_to 'delete', admin_workshop_url(workshop), method: :delete
+  %h2 All workshops
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th>#
+        %th title
+        %th actions
+
+    - @workshops.each_with_index do |workshop, i|
+
+      %tr
+        %td= i
+        %td= workshop.title
+        %td
+          = link_to 'edit', edit_admin_workshop_url(workshop), class: 'btn btn-primary'
+          = link_to 'delete', admin_workshop_url(workshop), method: :delete, class: 'btn btn-danger'

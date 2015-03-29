@@ -11,5 +11,7 @@
 
 class Workshop < ActiveRecord::Base
   acts_as_taggable # Alias for acts_as_taggable_on :tags
-  acts_as_taggable_on :audiences, :types
+  acts_as_taggable_on :audiences
+
+  self.inheritance_column = nil
 end

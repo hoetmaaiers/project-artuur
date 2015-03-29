@@ -7,25 +7,30 @@
   = csrf_meta_tags
 
 %body
-  %nav.navbar.navbar-inverse
-    .container-fluid
-      .navbar-header
-        %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-2", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "#"} Project Artuur
-      #bs-example-navbar-collapse-2.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li.active
-            %a{:href => "#"}
-              Workshops
+  %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse{role: "navigation"}
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: root_path} Project Artuur
+    / Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li{"class" => is_active?('/admin/workshops')}
+          %a{href: "/dashboards"} workshops
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            %a{"data-method" => "delete", "href" => destroy_user_session_path, "rel" => "nofollow", "class" => "logout-link"} Log out
 
-  %p.notice= notice
-  %p.alert= alert
 
-  %nav.main-navigation
-    = link_to 'workshops', admin_workshops_url
+      /.navbar-collapse
+  %br
+  %br
+  %br
 
-  = yield
+  .container
+    = yield

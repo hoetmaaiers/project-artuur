@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, path: 'admin'
+
   root 'welcome#index'
   get 'bar' => 'bar#index', as: :bar
   get 'workspace' => 'workspace#index', as: :workspace
