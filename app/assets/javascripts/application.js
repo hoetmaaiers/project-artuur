@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require svg-injector/svg-injector
 //= require_tree .
+//= require_self
+
+$(function(){
+    //jQuery code here
+  // Elements to inject
+  var mySVGsToInject = $('.js-svg-inject');
+  console.log("mySVGsToInject");
+  console.log(mySVGsToInject);
+  // Do the injection
+  SVGInjector(mySVGsToInject);
+});
+

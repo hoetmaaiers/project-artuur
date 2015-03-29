@@ -1,0 +1,28 @@
+.start-section {
+  width: 100%;
+  min-height: 100vh;
+
+  .content {
+    @include outer-container();
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 480px;
+      height: 411px;
+      top: 80px;
+      left: -50px;
+      pointer-events: none;
+
+      background-image: url('home-bg.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  .logo {
+    position: relative;
+    margin-top: 70px;
+    @include shift(2);
+  }
+}

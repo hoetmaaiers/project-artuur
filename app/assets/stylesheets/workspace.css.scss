@@ -1,3 +1,30 @@
 // Place all the styles related to the workspace controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.workspace-section {
+  @include outer-container();
+  padding-top: 200px;
+
+  .gallery {
+    @include span-columns(6);
+
+    .image {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  .content {
+    @include span-columns(6);
+    padding: 0 0 0 40px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  .title {
+    margin-top: 20px;
+  }
+}

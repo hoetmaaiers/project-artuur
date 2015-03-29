@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module ProjectArtuur
   class Application < Rails::Application
+    # custom fonts
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # bower components
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+
     # ActsAsTaggableOn.force_binary_collation = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -1,45 +1,81 @@
-.hero {
+.bar-section {
   position: relative;
-  width: 100%;
-  @include calc(height, "100vh - 71px");
-  max-height: 550px;
-  padding: 20px;
-  @include outer-container;
+  padding-top: 150px;
+
+  .bar-header-outer-wrapper {
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: url("bar/bar-triangle.svg");
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .bar-header-wrapper {
+    position: relative;
+    @include outer-container();
+
+  }
+
+  .bar-header {
+    position: relative;
+    @include outer-container();
+    width: 260px;
+    height: 575px;
+    padding: 0 20px;
+    padding-top: 100px;
+    margin: 0;
+    // @include clearfix();
+
+    .title {
+      font-size: 3.5em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-size: 1.5em;
+    }
+  }
 
   .cover-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .title {
+    // @include shift(3);
+    // @include span-columns(12);
     position: absolute;
-    padding: 40px;
-    @include calc(width, "100% - 40px");
-    top: 50%;
-    left: 50%;
-    @include transform(translateX(-50%) translateY(-50%));
-    color: white;
-    text-align: center;
-    background-color: rgba(0, 0, 0, .4);
-    font-size: 2.5em;
+    top: 0;
+    height: 575px;
+    min-width: 100vw;
+    left: 260px;
+    object-fit: contain;
+    object-position: left;
+  }
+
+  .content-wrapper {
+    background-color: #cdebe3;
+    width: 100%;
+    padding-top: 40px;
+  }
+  .content {
+    @include outer-container();
   }
 }
-
-.opening-hours {
-  padding-bottom: 50px;
-
-  .title {
-    text-align: center;
-  }
-}
-
 
 
 .opening-hours-list {
   margin: 0;
   padding: 0;
   @include outer-container;
+  @include span-columns(12);
+  float: none;
+  @include clearfix();
 
   .week-days,
   .weekend-days {
@@ -68,7 +104,7 @@
       }
     }
 
-    .title {
+    .label {
       text-transform: uppercase;
     }
 
@@ -78,14 +114,9 @@
   }
 }
 
-.menu-card-wrapper {
-  @include fill-parent;
-  padding: 50px 20px;
-  background-color: #CDEBE3;
-}
-
 .menu-card {
   @include outer-container;
+  padding: 40px 20px;
 
   img {
     // @include span-columns(12);
