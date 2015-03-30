@@ -1,7 +1,49 @@
 .workshops-section {
 
-  .workshops-header {
+  .workshops-header-wrapper {
     background-image: url('backgrounds/congruent_pentagon_pattern.png');
     height: 100vh;
+  }
+
+  .workshops-header {
+    @include outer-container();
+    @include span-columns(6);
+    @include shift(3);
+
+    .description {
+      font-family: $lato;
+    }
+  }
+
+
+  .type-filter {
+    border-radius: 6px;
+    border: 1px solid #62e091;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    float: left;
+    clear: both;
+    @include clearfix();
+
+    button {
+      display: block;
+      float: left;
+      border: 0;
+      background-color: white;
+      padding: 15px;
+      border-right: 1px solid #62e091;
+      text-transform: uppercase;
+      font-family: $nexa_bold;
+
+      &:last-child {
+        border: 0;
+      }
+
+      &.active,
+      &:hover {
+        background-color: #62e091;
+      }
+    }
   }
 }

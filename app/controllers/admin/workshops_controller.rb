@@ -1,6 +1,6 @@
 class Admin::WorkshopsController < Admin::AdminController
-
   before_filter :set_workshop, only: [:edit, :update, :destroy]
+
   def index
     # render text: "workshops"
     @workshop = Workshop.new
@@ -38,6 +38,6 @@ private
   end
 
   def workshop_params
-    params.require(:workshop).permit(:title, :type, :type_list, :audience_list => [])
+    params.require(:workshop).permit(:title, :description, :type, :type_list, :cover_image, :audience_list, :tag_list)
   end
 end

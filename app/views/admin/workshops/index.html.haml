@@ -7,14 +7,11 @@
   %table.table.table-striped.table-hover
     %thead
       %tr
-        %th>#
         %th title
         %th actions
 
-    - @workshops.each_with_index do |workshop, i|
-
+    - @workshops.each do |workshop|
       %tr
-        %td= i
         %td= workshop.title
         %td
           = link_to 'edit', edit_admin_workshop_url(workshop), class: 'btn btn-primary'

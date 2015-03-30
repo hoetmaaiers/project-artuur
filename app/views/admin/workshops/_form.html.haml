@@ -1,31 +1,39 @@
 .well
-  = form_for [:admin, @workshop], html: { class: 'form-horizontal' } do |f|
+  = form_for [:admin, @workshop], html: { class: 'form-horizontal', multipart: true} do |f|
     %fieldset
-      %legend New workshop
+      / %legend workshop
 
       / Title
       .form-group
-        = f.label :title, class: 'control-label col-lg-2'
+        = f.label :title, 'Title', class: 'control-label col-lg-2'
         .col-lg-10
           = f.text_field :title, class: 'form-control', placeholder: 'Title'
 
       / Description
       .form-group
-        = f.label :description, class: 'control-label col-lg-2'
+        = f.label :description, 'Beschrijving', class: 'control-label col-lg-2'
         .col-lg-10
           = f.text_area :description, class: 'form-control', placeholder: 'Description', rows: 3
 
+      .form-group
+        = f.label :type, class: 'control-label col-lg-2'
+        .col-lg-10
+          = f.select :type, options_for_select(['in house', 'on request'], @workshop.type), {}, {class: 'form-control' }
 
       .form-group
-        = f.label :audience_list, class: 'control-label col-lg-2'
+        = f.label :audience_list, 'Doelgroep', class: 'control-label col-lg-2'
         .col-lg-10
           = f.text_field :audience_list, class: 'form-control', data: { role: "tagsinput" }
 
       .form-group
-
-        = f.label :type, class: 'control-label col-lg-2'
+        = f.label :tag_list, 'Andere tags', class: 'control-label col-lg-2'
         .col-lg-10
-          = f.select :type, {class: 'form-controler' } do
-            = options_for_select(['in house', 'on request'])
+          = f.text_field :tag_list, class: 'form-control', data: { role: "tagsinput" }
+
+      .form-group
+        = f.label :cover_image, 'Cover image', class: 'control-label col-lg-2'
+        .col-lg-10
+          = f.file_field :cover_image, class: 'form-control'
+
 
       = f.submit 'create', class: 'btn btn-primary'

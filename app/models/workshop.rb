@@ -14,4 +14,7 @@ class Workshop < ActiveRecord::Base
   acts_as_taggable_on :audiences
 
   self.inheritance_column = nil
+
+  has_attached_file :cover_image, :styles => { :medium => "350x350>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :cover_image, :content_type => /\Aimage\/.*\Z/
 end
