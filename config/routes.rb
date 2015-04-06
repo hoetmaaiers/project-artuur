@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'expo' => 'expo#index', as: :expo
   get 'about' => 'about#index', as: :about
 
+  resources :workshops
+
   get 'admin' => 'admin/workshops#index', as: :admin
   namespace :admin do
     resources :workshops

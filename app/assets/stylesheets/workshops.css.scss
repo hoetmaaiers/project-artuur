@@ -1,14 +1,18 @@
 .workshops-section {
+  $workshops-list-height: 350px;
 
   .workshops-header-wrapper {
     background-image: url('backgrounds/congruent_pentagon_pattern.png');
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .workshops-header {
     @include outer-container();
     @include span-columns(6);
     @include shift(3);
+    padding-top: 100px;
+    padding-bottom: $workshops-list-height + 50px;
+    float: none;
 
     .description {
       font-family: $lato;
@@ -44,6 +48,47 @@
       &:hover {
         background-color: #62e091;
       }
+    }
+  }
+
+  .workshops-list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: $workshops-list-height;
+    white-space: nowrap;
+    @include transform(translateY(-100%));
+  }
+
+  .workshop-item {
+    position: relative;
+    display: inline-block;
+    margin-left: -3px;
+    text-decoration: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      width: 100%;
+      @include linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+    }
+
+    .title {
+      position: relative;
+      padding-bottom: 30px;
+      @include transform(translateY(-100%));
+      z-index: 1;
+
+      color: white;
+      font-size: 1.2em;
+      font-family: $nexa_bold;
+      text-decoration: none;
+      text-align: center;
     }
   }
 }

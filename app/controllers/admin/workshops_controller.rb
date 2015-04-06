@@ -1,5 +1,5 @@
 class Admin::WorkshopsController < Admin::AdminController
-  before_filter :set_workshop, only: [:edit, :update, :destroy]
+  before_filter :set_workshop, only: [:show, :edit, :update, :destroy]
 
   def index
     # render text: "workshops"
