@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'about#index', as: :about
 
   resources :workshops
+  resources :requests
 
   get 'admin' => 'admin/workshops#index', as: :admin
   namespace :admin do

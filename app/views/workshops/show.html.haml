@@ -1,22 +1,127 @@
-%h1.title= @workshop.title
-= image_tag @workshop.cover_image.url(:medium), class: 'cover-image'
-
-%h2 Groepsworkshop (op aanvraag)
-
-Naam organisatie:
-* Straat + nummer:
-* Gemeente + postcode:
-Telefoonnummer:
-* Voornaam + naam contactpersoon:
-* Telefoon contactpersoon:
-* E-mail contactpersoon:
-* Datum workshop:
-Aantal deelnemers:
-* Leeftijd deelnemers:
-Vragen:
+.workshop-section
+  .workshop-header
+    = image_tag @workshop.cover_image.url(:medium), class: 'cover-image'
+    .workshop-header-wrapper
+      .tags
+        - tags = @workshop.tags + @workshop.audiences
+        - tags.each do |tag|
+          .tag-item= tag
 
 
-%h2 In huis
+  .content
+    .worskhop-information
+      .type
+        - if @workshop.in_house?
+          Workshop in huis
+        - elsif @workshop.on_request?
+          Workshop op aanvraag
 
-* Naam
-* Emailadres
+      %h1.title= @workshop.title
+
+      .description= @workshop.description
+
+
+
+    .workshop-request-form
+      %h2.subtitle Interesse?
+      %p Vul vrijblijvend volgend formulier in, zo kunnen wij je verder contacteren.
+      .success.hidden
+        Bedankt, je aanvraag is goed aangekomen. We contacteren je zo snel mogelijk.
+      %ul.validation-errors.hidden
+
+
+      / Form
+      - if @workshop.on_request?
+        = form_for @request, remote: true do |f|
+          = hidden_field_tag :context, 'on_request'
+
+          / Deelnemers
+          .workshop-details-group
+            %h3 Wie, hoeveel, wanneer
+
+            .form-group
+              = f.label :workshop_date, 'Datum workshop *'
+              = f.date_field :workshop_date
+
+            .form-group
+              = f.label :participant_count, 'Aantal deelnemers'
+              = f.text_field :participant_count
+
+            .form-group
+              = f.label :participant_age, 'Leeftijd van de deelnemers *'
+              = f.text_field :participant_age
+
+
+          .organization-group
+            %h3 Over de organisatie
+
+            .form-group
+              = f.label :organization_name, 'Naam'
+              = f.text_field :organization_name
+
+            .form-group
+              = f.label :street, 'Straat *'
+              = f.text_field :street
+
+            .form-group
+              = f.label :nr, 'Huisnummer *'
+              = f.text_field :nr
+
+            .form-group
+              = f.label :town, 'Gemeente *'
+              = f.text_field :town
+
+            .form-group
+              = f.label :postal_code, 'Postcode *'
+              = f.text_field :postal_code
+
+            .form-group
+              = f.label :phone_number, 'Telefoonnummer'
+              = f.phone_field :phone_number
+
+
+          .contact-person-group
+            %h3 Contactpersoon
+            .form-group
+              = f.label :contact_first_name, 'Voornaam *'
+              = f.text_field :contact_first_name
+
+            .form-group
+              = f.label :contact_last_name, 'Familienaam *'
+              = f.text_field :contact_last_name
+
+            .form-group
+              = f.label :contact_phone_number, 'Telefoonnummer *'
+              = f.phone_field :contact_phone_number
+
+            .form-group
+              = f.label :contact_email, 'Email *'
+              = f.email_field :contact_email
+
+
+          .extras-group
+            .form-group
+              = f.label :question, 'Extra vragen'
+              = f.text_area :question
+
+          .form-group
+            = f.submit 'Vraag workshop aan'
+
+      - elsif @workshop.in_house?
+        = form_for @request, remote: true do |f|
+          = hidden_field_tag :context, 'in_house'
+
+          .form-group
+            = f.label :contact_first_name, 'Voornaam *'
+            = f.text_field :contact_first_name
+
+          .form-group
+            = f.label :contact_last_name, 'Familienaam *'
+            = f.text_field :contact_last_name
+
+          .form-group
+            = f.label :contact_email, 'Emailadres *'
+            = f.email_field :contact_email
+
+          .form-group
+            = f.submit 'Schrijf jezelf in'

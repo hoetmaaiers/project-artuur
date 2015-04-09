@@ -21,8 +21,7 @@ $(function(){
     //jQuery code here
   // Elements to inject
   var mySVGsToInject = $('.js-svg-inject');
-  console.log("mySVGsToInject");
-  console.log(mySVGsToInject);
+
   // Do the injection
   SVGInjector(mySVGsToInject);
 });

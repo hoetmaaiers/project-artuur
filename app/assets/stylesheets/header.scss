@@ -71,6 +71,7 @@
     right: 10px;
     width: 16px;
 
+    outline: none;
     box-sizing: content-box;
     border: 0;
     background-color: transparent;
@@ -108,6 +109,12 @@
   top: 120px;
   right: 23px;
   z-index: 1;
+
+  display: none;
+
+  @include media($tablet-portrait) {
+    display: block;
+  }
 
   a {
     float: left;

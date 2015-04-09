@@ -12,9 +12,10 @@
 /*
  * Media Queries
  */
-// $mobile:       new-breakpoint(max-width 500px);
-// $tablet-small: new-breakpoint(min-width 768px 12);
-// $tablet:       new-breakpoint(min-width 1024px 12);
+$mobile: new-breakpoint(max-width 500px);
+$tablet-portrait: new-breakpoint(min-width 768px 12);
+$tablet: new-breakpoint(min-width 1024px 12);
+
 @include font-face("nexa_bold", "nexa_bold/nexa-bold", bold);
 @include font-face("basic_title", "basic_title/basictitlefont-webfont", regular);
 

@@ -1,5 +1,5 @@
 .workshops-section {
-  $workshops-list-height: 350px;
+  $workshop-item-height: 350px;
 
   .workshops-header-wrapper {
     background-image: url('backgrounds/congruent_pentagon_pattern.png');
@@ -11,7 +11,7 @@
     @include span-columns(6);
     @include shift(3);
     padding-top: 100px;
-    padding-bottom: $workshops-list-height + 50px;
+    padding-bottom: $workshop-item-height + 50px;
     float: none;
 
     .description {
@@ -54,7 +54,7 @@
   .workshops-list {
     overflow-x: scroll;
     overflow-y: hidden;
-    height: $workshops-list-height;
+    height: $workshop-item-height;
     white-space: nowrap;
     @include transform(translateY(-100%));
   }
@@ -64,6 +64,14 @@
     display: inline-block;
     margin-left: -3px;
     text-decoration: none;
+    width: $workshop-item-height;
+    height: $workshop-item-height;
+
+    .cover-image {
+      width: $workshop-item-height;
+      height: $workshop-item-height;
+      object-fit: cover;
+    }
 
     &:first-child {
       margin-left: 0;
@@ -89,6 +97,143 @@
       font-family: $nexa_bold;
       text-decoration: none;
       text-align: center;
+    }
+  }
+}
+
+.workshop-section {
+
+  .workshop-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+    .workshop-header-wrapper {
+      @include outer-container();
+    }
+
+    .tags {
+      position: absolute;
+      bottom: 0;
+      padding: 10px 20px;
+      color: rgba(255, 255, 255, 0.8);
+
+      .tag-item {
+        display: block;
+        // margin-left: 5px;
+        margin-bottom: 5px;
+        float: left;
+        font-style: italic;
+        text-transform: uppercase;
+
+        &:first-child {
+          margin-left: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        &:before {
+          content: ',';
+          position: relative;
+          padding-left: 2px;
+          padding-right: 10px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .cover-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    @include outer-container();
+    padding: 20px;
+  }
+
+  .worskhop-information {
+    padding: 10px 0 40px 0;
+
+    @include media($tablet-portrait) {
+      @include span-columns(6);
+    }
+
+    .title {
+      margin: 0;
+    }
+
+    .description {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+
+    .tags,
+    .audiences {
+      @include clearfix();
+    }
+
+    .type {
+      font-size: 1.2em;
+      // font-style: italic;
+      color: #ccc;
+    }
+  }
+
+  .workshop-request-form {
+    @include media($tablet-portrait) {
+      @include span-columns(6);
+    }
+
+    label {
+      display: block;
+    }
+
+    input,
+    textarea {
+      line-height: normal;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      padding: 7px 5px;
+      background-color: whitesmoke;
+      margin-top: 5px;
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .validation-errors {
+      background-color: rgb(255, 229, 209);
+      padding: 10px 20px;
+      list-style-position: inside;
+
+      &.hidden {
+        display: none;
+      }
+
+      .error {
+        padding: 5px 20px 5px 0px;
+      }
+    }
+  }
+
+  .success {
+    padding: 10px;
+    background-color: rgb(219, 243, 188);
+    margin: 10px 0 20px;
+
+    &.hidden {
+      display: none;
     }
   }
 }

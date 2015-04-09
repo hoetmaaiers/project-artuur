@@ -18,7 +18,7 @@
       .form-group
         = f.label :type, class: 'control-label col-lg-2'
         .col-lg-10
-          = f.select :type, options_for_select(['in house', 'on request'], @workshop.type), {}, {class: 'form-control' }
+          = f.select :type, Workshop.type.options, {}, {class: 'form-control' }
 
       .form-group
         = f.label :audience_list, 'Doelgroep', class: 'control-label col-lg-2'
