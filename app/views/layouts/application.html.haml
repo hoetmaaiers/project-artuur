@@ -17,18 +17,19 @@
       %button.btn-close
         = image_tag 'icons/cross.svg', class: 'js-svg-inject icon'
 
-      %a.link{href: 'bar'} bar
-      %a.link{href: 'workshops'} workshops
-      %a.link{href: 'workspace'} workspace
-      %a.link{href: 'expo'} expo
+      = link_to 'bar', bar_url, class: 'link'
+      = link_to 'workshops', workshops_url, class: 'link'
+      = link_to 'workspace', workspace_url, class: 'link'
+      = link_to 'expo', expo_url, class: 'link'
+
 
       .social
         = link_to image_tag('icons/facebook.svg', class: 'js-svg-inject'), 'https://www.facebook.com/ProjectArtuur', class: 'link-social'
         = link_to image_tag('icons/instagram.svg', class: 'js-svg-inject'), 'http://instagram.com', class: 'link-social'
 
-    %nav.social-navigation
-      = link_to image_tag('icons/facebook.svg'), 'https://www.facebook.com/ProjectArtuur'
-      = link_to image_tag('icons/instagram.svg'), 'http://instagram.com'
+    / %nav.social-navigation
+    /   = link_to image_tag('icons/facebook.svg'), 'https://www.facebook.com/ProjectArtuur'
+    /   = link_to image_tag('icons/instagram.svg'), 'http://instagram.com'
 
     %button.nav-toggle
       = image_tag 'nav-toggle.svg'

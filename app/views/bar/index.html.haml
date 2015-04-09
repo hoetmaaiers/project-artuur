@@ -1,37 +1,38 @@
-.hero
-  = image_tag 'backgrounds/bar.jpg', class: 'cover-image'
-  %h1.title Bar
+%section.section.bar-section
+  .bar-header-outer-wrapper
+    .bar-header-wrapper
+      %header.bar-header
+        %h1.title Bar
+        %p.tagline He found himself transformed in his bed into a horrible vermin.
 
+      = image_tag 'bar/cover.jpg', class: 'cover-image'
 
-.opening-hours
-  %h2.title Openingsuren
+  .content-wrapper
+    .content
+      .opening-hours
+      %ul.opening-hours-list
+        %li.day.closed{class: ('today' if is_today('monday'))}
+          .label maandag
+          .info gesloten
+        %li.day.closed{class: ('today' if is_today('tuesday'))}
+          .label dinsdag
+          .info gesloten
+        %li.day{class: ('today' if is_today('wednesday'))}
+          .label woensdag
+          .info 10u tot 18u
+        %li.day{class: ('today' if is_today('thursday'))}
+          .label donderdag
+          .info 10u tot 2u
+        %li.day{class: ('today' if is_today('friday'))}
+          .label vrijdag
+          .info 10u tot 2u
+        %li.day{class: ('today' if is_today('saturday'))}
+          .label zaterdag
+          .info 10u tot 2u
+        %li.day{class: ('today' if is_today('sunday'))}
+          .label zondag
+          .info 12u tot 20u
 
-  %ul.opening-hours-list
-    .week-days
-      %li.day.closed{class: ('today' if is_today('monday'))}
-        .title maandag
-        .info gesloten
-      %li.day.closed{class: ('today' if is_today('tuesday'))}
-        .title dinsdag
-        .info gesloten
-      %li.day{class: ('today' if is_today('wednesday'))}
-        .title woensdag
-        .info 10u tot 18u
-      %li.day{class: ('today' if is_today('thursday'))}
-        .title donderdag
-        .info 10u tot 2u
-    .weekend-days
-      %li.day{class: ('today' if is_today('friday'))}
-        .title vrijdag
-        .info 10u tot 2u
-      %li.day{class: ('today' if is_today('saturday'))}
-        .title zaterdag
-        .info 10u tot 2u
-      %li.day{class: ('today' if is_today('sunday'))}
-        .title zondag
-        .info 12u tot 20u
-
-.menu-card-wrapper
-  .menu-card
-    = image_tag 'bar/menu-card-recto.png'
-    = image_tag 'bar/menu-card-verso.png'
+    .menu-card
+      = image_tag 'bar/menu-card-recto.png'
+      = image_tag 'bar/menu-card-verso.png'

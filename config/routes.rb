@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'admin'
 
   root 'welcome#index'
+  get 'onepage' => 'onepage#index'
   get 'bar' => 'bar#index', as: :bar
   get 'workspace' => 'workspace#index', as: :workspace
   get 'expo' => 'expo#index', as: :expo

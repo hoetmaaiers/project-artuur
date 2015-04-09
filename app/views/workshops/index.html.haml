@@ -1,0 +1,27 @@
+%section.section.workshops-section
+  .workshops-header-wrapper
+    .workshops-header
+      %h1.title Workshops
+
+      .description
+        %p We organiseren educatieve en culturele workshops binnen verschillende disciplines, zowel in huis als op aanvraag.
+
+        %p
+          %strong Workshops in huis
+          worden op vaste tijdstippen door Artuur ingericht, iedereen is vrij om zich hiervoor in te schrijven en deel te nemen!
+          %br
+          %strong Workshops op aanvraag
+          reserveer je op voorhand en dienen enkel voor grotere groepen.
+
+        %p Maak hieronder je keuze en ontdek ons aanbod!
+
+      .type-filter
+        %button Alle
+        %button In huis
+        %button Op aanvraag
+
+  .workshops-list
+    - @workshops.each do |workshop|
+      = link_to workshop_url(workshop.id), {class: 'workshop-item'} do
+        = image_tag workshop.cover_image.url(:medium), class: 'cover-image'
+        %h3.title= workshop.title

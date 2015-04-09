@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.turbolinks
 //= require svg-injector/svg-injector
 //= require_tree .
 //= require_self
+//= require turbolinks
 
 $(function(){
     //jQuery code here
