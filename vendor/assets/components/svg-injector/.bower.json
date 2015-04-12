@@ -38,6 +38,5 @@
   },
   "_source": "git://github.com/iconic/SVGInjector.git",
   "_target": "~1.1.2",
-  "_originalSource": "svg-injector",
-  "_direct": true
+  "_originalSource": "svg-injector"
 }

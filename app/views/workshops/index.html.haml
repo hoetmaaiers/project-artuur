@@ -23,17 +23,17 @@
       .tag-filters
         .subtitle Soort workshop:
         - @tags.each do |tag|
-          %button.tag-item= tag.name
+          %button.filter-item{data: {filter: "tag-#{tag.id}"}}= tag.name
 
       .audience-filters
         .subtitle Doelgroep:
         - @audiences.each do |audience|
-          %button.tag-item= audience.name
+          %button.filter-item{data: {filter: "audience-#{audience.id}"}}= audience.name.dasherize
 
 
   .workshops-list
     - @workshops.each do |workshop|
-      = link_to workshop_url(workshop.id), {class: 'workshop-item'} do
+      = link_to workshop_url(workshop.id), {class: workshop_class(workshop)} do
         = image_tag workshop.cover_image.url(:medium), class: 'cover-image'
         %h3.title= workshop.title
         .tags

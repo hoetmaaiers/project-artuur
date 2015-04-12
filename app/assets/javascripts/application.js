@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require svg-injector/svg-injector
+//= require isotope.pkgd.min.js
 //= require_tree .
 //= require_self
 //= require turbolinks
