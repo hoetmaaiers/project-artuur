@@ -15,13 +15,30 @@
 
         %p Maak hieronder je keuze en ontdek ons aanbod!
 
-      .type-filter
-        %button Alle
+      .type-filters
+        %button Allemaal
         %button In huis
         %button Op aanvraag
+
+      .tag-filters
+        .subtitle Soort workshop:
+        - @tags.each do |tag|
+          %button.tag-item= tag.name
+
+      .audience-filters
+        .subtitle Doelgroep:
+        - @audiences.each do |audience|
+          %button.tag-item= audience.name
+
 
   .workshops-list
     - @workshops.each do |workshop|
       = link_to workshop_url(workshop.id), {class: 'workshop-item'} do
         = image_tag workshop.cover_image.url(:medium), class: 'cover-image'
         %h3.title= workshop.title
+        .tags
+          .tags-wrapper
+            - tags = workshop.tags + workshop.audiences
+            - tags.each do |tag|
+              .tag-item= tag
+
