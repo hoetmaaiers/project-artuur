@@ -13,6 +13,7 @@
 
     .description {
       font-family: $lato;
+      font-size: 1.2em;
     }
   }
 
@@ -28,6 +29,7 @@
     @include clearfix();
 
     button {
+      @include transition(all 300ms);
       display: block;
       float: left;
       border: 0;
@@ -42,25 +44,30 @@
         border: 0;
       }
 
-      &.active,
-      &:hover {
+      &.active:hover,
+      &.active {
         background-color: #62e091;
+      }
+
+      &:hover {
+        background-color: rgba(98, 224, 145, 0.5)
       }
     }
   }
 
-  .tag-filters,
-  .audience-filters {
+  .filter-group {
     display: block;
     position: relative;
     float: left;
     clear: both;
     @include clearfix;
+    padding-top: 20px;
 
     .subtitle {
       margin-top: 10px;
       margin-bottom: 5px;
-      font-weight: bold;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.5);
     }
 
     .filter-item {
@@ -79,9 +86,13 @@
         margin-right: 0;
       }
 
-      &.active,
-      &:hover {
+      &.active:hover,
+      &.active {
         background-color: #62e091;
+      }
+
+      &:hover {
+        background-color: rgba(98, 224, 145, 0.5)
       }
     }
   }
@@ -95,7 +106,6 @@
   .workshop-item {
     position: relative;
     display: block;
-    float: left;
     text-decoration: none;
     @include calc(width, "100vw/3");
     @include calc(height, "100vw/3");
@@ -110,6 +120,10 @@
         bottom: 90px;
         opacity: 1;
       }
+
+      // &:after {
+      //   height: 70%;
+      // }
     }
 
     .cover-image {
@@ -123,6 +137,7 @@
     }
 
     &:after {
+      @include transition(all 300ms);
       content: "";
       position: absolute;
       bottom: 0;
@@ -135,7 +150,7 @@
       position: relative;
       padding-bottom: 30px;
       @include transform(translateY(-100%));
-      @include transition(all 300ms);
+      @include transition(all 400ms);
       z-index: 1;
 
       color: white;
@@ -154,27 +169,31 @@
       display: block;
       left: 50%;
       opacity: 0;
+      z-index: 1;
+
       @include transform(translateX(-50%));
       @include transition(all 400ms);
+    }
 
-      .tags-wrapper {
-        @include clearfix;
-        float: left;
-        left: 50%;
-        position: relative;
-        transform: translateX(-50%);
-      }
+    .tags-wrapper {
+      @include clearfix;
+      float: left;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+    }
 
-      .tag-item {
-        display: block;
-        float: left;
-        color: white;
-        border: 1px solid white;
-        border-radius: 6px;
-        padding: 4px 8px;
-        margin-right: 4px;
-        margin-bottom: 4px;
-      }
+    .tag-item {
+      display: block;
+      float: left;
+      color: rgba(0, 0, 0, 0.8);
+      border: 1px solid white;
+      border-radius: 6px;
+      padding: 4px 8px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      background-color: white;
+      opacity: 0.8;
     }
   }
 }

@@ -3,6 +3,9 @@ module WorkshopsHelper
     klass = []
     klass.push('workshop-item')
 
+    # add type
+    klass.push "type-#{workshop.type.dasherize}"
+
     # add tag filters
     workshop.tags.each do |tag|
       klass.push "tag-#{tag.id}"

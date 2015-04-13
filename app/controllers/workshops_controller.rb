@@ -3,8 +3,8 @@ class WorkshopsController < ApplicationController
 
   def index
     @workshops = Workshop.all()
-    @tags = ActsAsTaggableOn::Tagging.where(context: 'tags').map(&:tag)
-    @audiences = ActsAsTaggableOn::Tagging.where(context: 'audiences').map(&:tag)
+    @tags = ActsAsTaggableOn::Tagging.where(context: 'tags').map(&:tag).uniq
+    @audiences = ActsAsTaggableOn::Tagging.where(context: 'audiences').map(&:tag).uniq
   end
 
   def show

@@ -16,17 +16,17 @@
         %p Maak hieronder je keuze en ontdek ons aanbod!
 
       .type-filters
-        %button Allemaal
-        %button In huis
-        %button Op aanvraag
+        %button.type-filter{data: {filter: "type-all"}} Allemaal
+        %button.type-filter{data: {filter: "type-in-house"}} In huis
+        %button.type-filter{data: {filter: "type-on-request"}} Op aanvraag
 
-      .tag-filters
-        .subtitle Soort workshop:
+      .tag-filters.filter-group
+        .subtitle Soort workshop
         - @tags.each do |tag|
           %button.filter-item{data: {filter: "tag-#{tag.id}"}}= tag.name
 
-      .audience-filters
-        .subtitle Doelgroep:
+      .audience-filters.filter-group
+        .subtitle Doelgroep
         - @audiences.each do |audience|
           %button.filter-item{data: {filter: "audience-#{audience.id}"}}= audience.name.dasherize
 
@@ -40,5 +40,5 @@
           .tags-wrapper
             - tags = workshop.tags + workshop.audiences
             - tags.each do |tag|
-              .tag-item= tag
+              .tag-item= tag.name.upcase
 
