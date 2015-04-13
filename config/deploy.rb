@@ -8,7 +8,11 @@ set :repo_url, 'git@github.com:hoetmaaiers/project-artuur.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '~/public_html/staging'
+set :deploy_via, :copy
+
+# set :tmp_dir, "#{fetch(:home)}/tmp"
+set :tmp_dir, "/home3/projego6/capistrano_tmp"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -21,6 +25,12 @@ set :repo_url, 'git@github.com:hoetmaaiers/project-artuur.git'
 
 # Default value for :pty is false
 # set :pty, true
+set :log_level, :debug
+
+SSHKit.config.command_map[:bash] = "/usr/bin/bash"
+
+# set :use_sudo, false
+
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
@@ -45,4 +55,14 @@ namespace :deploy do
     end
   end
 
+  task :start do ; end
+  task :stop do ; end
+
+  # Touch tmp/restart.txt to tell Phusion Passenger about new version
+  # task :restart, :roles => :app, :except => { :no_release => true } do
+  #   run "touch #{File.join(current_path, 'tmp', 'restart.txt')}"
+  # end
 end
+
+# Clean-up old releases
+after "deploy:restart", "deploy:cleanup"

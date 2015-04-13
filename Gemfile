@@ -29,7 +29,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -55,8 +55,12 @@ gem 'paperclip', '~> 4.2.1'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  # Use Capistrano for deployment
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-passenger'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
