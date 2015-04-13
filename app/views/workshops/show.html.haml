@@ -1,6 +1,6 @@
 .workshop-section
   .workshop-header
-    = image_tag @workshop.cover_image.url(:medium), class: 'cover-image'
+    = image_tag @workshop.cover_image.url(:large), class: 'cover-image'
     .workshop-header-wrapper
       .tags
         - tags = @workshop.tags + @workshop.audiences

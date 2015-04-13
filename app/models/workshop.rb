@@ -25,7 +25,7 @@ class Workshop < ActiveRecord::Base
 
   self.inheritance_column = nil
 
-  has_attached_file :cover_image, :styles => { :medium => "350x350>", :thumb => "100x100>" }, :default_url => ":style/missing.gif"
+  has_attached_file :cover_image, styles: { large: "1024x1024>", medium: "350x350>", thumb: "100x100>" }, default_url: ":style/missing.gif"
   validates_attachment_content_type :cover_image, :content_type => /\Aimage\/.*\Z/
 
   has_many :requests
