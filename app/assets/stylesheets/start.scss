@@ -2,6 +2,10 @@
   width: 100%;
   min-height: 100vh;
 
+  .quick-nav {
+    font-family: $kingthings-trypewriter;
+  }
+
   .content {
     @include outer-container();
 
@@ -27,6 +31,6 @@
   }
 
   .label {
-    font-family: $basic-title;
+    font-family: $kingthings-trypewriter;
   }
 }

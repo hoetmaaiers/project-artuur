@@ -18,10 +18,12 @@ $tablet: new-breakpoint(min-width 1024px 12);
 
 @include font-face("nexa_bold", "nexa_bold/nexa-bold", bold);
 @include font-face("basic_title", "basic_title/basictitlefont-webfont", regular);
+@include font-face("kingthings_trypewriter_2Rg", "kingthings_trypewriter/kingthings_trypewriter_2-webfont", regular);
 
 $nexa-bold: 'nexa_bold', sans-serif;
 $lato: 'Lato', sans-serif;
 $basic-title: 'basic_title', serif;
+$kingthings-trypewriter: 'kingthings_trypewriter_2Rg', serif;
 
 * {
   box-sizing: border-box;
