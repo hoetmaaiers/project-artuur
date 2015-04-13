@@ -53,6 +53,38 @@ body {
   font-size: 3em;
 }
 
+p {
+  font-family: $lato;
+  font-size: 1em;
+}
+
+ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  padding-left: 20px;
+
+  &:before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    display: block;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @import "header";
 @import "start";
 @import "workshops";

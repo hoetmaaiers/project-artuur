@@ -45,6 +45,7 @@
       @include clearfix;
       @include transition(color 300ms);
       position: relative;
+      padding: 0;
       margin-bottom: 12px;
       width: 100%;
 
@@ -86,6 +87,66 @@
       @include media($tablet-portrait) {
         display: block;
       }
+    }
+  }
+
+  .about {
+    margin-top: 150px;
+
+    .intro {
+      @include span-columns(8);
+      @include shift(2);
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    .title {
+      text-transform: none;
+      font-size: 2em;
+    }
+
+    .about {
+      @include span-columns(12);
+
+      @include media($tablet-portrait) {
+        @include span-columns(6);
+      }
+    }
+
+    .about-lieke {
+      margin-right: 0;
+
+      p,
+      .title {
+        text-align: right;
+      }
+    }
+
+    .profile-picture {
+      position: relative;
+      width: 100%;
+
+      &:before{
+        content: "";
+        display: block;
+        padding-top: 100%;  /* initial ratio of 1:1*/
+      }
+
+      img {
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .about-content {
+      line-height: 1.4em;
+      padding: 20px 30px;
     }
   }
 }
