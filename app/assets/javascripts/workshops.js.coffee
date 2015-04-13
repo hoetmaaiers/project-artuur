@@ -18,9 +18,6 @@ $ ->
     )
 
   filterWorkshops = ->
-    console.log 'filterWorkshops'
-    console.log filterClass
-    console.log typeClass
     isotopeFilter = { filter: filterClass + typeClass }
     $workshopsList.isotope($.extend(isotopeOptions, isotopeFilter))
 
@@ -63,7 +60,6 @@ $ ->
 
 
 
-
   ###
   # filter by type
   ###
@@ -78,7 +74,7 @@ $ ->
     $type.addClass('active')
     filter = $type.data('filter')
     if filter == 'type-all'
-      typeClass = '*'
+      typeClass = ''
     else
       typeClass = ".#{filter}"
 

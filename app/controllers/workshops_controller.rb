@@ -2,7 +2,7 @@ class WorkshopsController < ApplicationController
   before_filter :set_workshop, only: [:show]
 
   def index
-    @workshops = Workshop.all()
+    @workshops = Workshop.where(published: true)
     @tags = ActsAsTaggableOn::Tagging.where(context: 'tags').map(&:tag).uniq
     @audiences = ActsAsTaggableOn::Tagging.where(context: 'audiences').map(&:tag).uniq
   end

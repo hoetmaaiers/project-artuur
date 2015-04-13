@@ -38,6 +38,6 @@ private
   end
 
   def workshop_params
-    params.require(:workshop).permit(:title, :description, :type, :type_list, :cover_image, :audience_list, :tag_list)
+    params.require(:workshop).permit(:title, :description, :type, :type_list, :cover_image, :audience_list, :tag_list, :published)
   end
 end

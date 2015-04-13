@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20150406172628) do
     t.string   "type"
     t.text     "description"
     t.datetime "date"
+    t.boolean  "published"
+    t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cover_image_file_name"

@@ -1,7 +1,7 @@
 .container
   %h2 New workshop
 
-  = render 'form'
+  = render partial: 'form', locals: {action: 'new'}
 
   %h2 All workshops
   %table.table.table-striped.table-hover

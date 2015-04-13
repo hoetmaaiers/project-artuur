@@ -6,6 +6,9 @@ class CreateWorkshops < ActiveRecord::Migration
       t.text :description
       t.datetime :date
 
+      t.boolean :published
+      t.boolean :archived
+
       t.timestamps
     end
   end

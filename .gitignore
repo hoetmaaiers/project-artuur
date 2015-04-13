@@ -15,3 +15,6 @@
 /log/*.log
 /tmp
 /vendor/assets/components/
+
+# Ignore workshop assets by paperclip
+/public/system/workshops/

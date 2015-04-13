@@ -31,9 +31,19 @@
           = f.text_field :tag_list, class: 'form-control', data: { role: "tagsinput" }
 
       .form-group
-        = f.label :cover_image, 'Cover image', class: 'control-label col-lg-2'
+        = f.label :cover_image, 'Cover afbeelding', class: 'control-label col-lg-2'
         .col-lg-10
           = f.file_field :cover_image, class: 'form-control'
 
 
-      = f.submit 'create', class: 'btn btn-primary'
+
+      .checkbox
+        %label
+          = f.check_box :published
+          Published
+
+      - if action == 'new'
+        = f.submit 'create', class: 'btn btn-primary'
+      - else
+        = f.submit 'update', class: 'btn btn-primary'
+
