@@ -5,16 +5,20 @@
     %nav.quick-nav
       %ul
         %li
-          .label Workshops
-          .description voor jong en oud, lekker creatief wezen
+          = link_to 'workshops' do
+            .label Workshops
+            .description voor jong en oud, lekker creatief wezen
         %li
-          .label Bar
-          .description Zoet? schuimig? Vooral gezellig
+          = link_to 'bar' do
+            .label Bar
+            .description Zoet? schuimig? Vooral gezellig
         %li
-          .label Expo
-          .description
+          = link_to 'expo' do
+            .label Expo
+            .description
         %li
-          .label Workspace
-          .description
+          = link_to 'workspace' do
+            .label Workspace
+            .description
 
 / = yield
