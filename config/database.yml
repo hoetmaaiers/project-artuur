@@ -54,5 +54,7 @@ production:
   username: projego6_root
   password: fymO5^RpX~VH
   host: 127.0.0.1
+  reconnect: true
+  port: 3306
   # socket: /tmp/mysql.sock
   # database: db/production.sqlite3
