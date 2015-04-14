@@ -14,7 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/vendor/assets/components/
+# /vendor/assets/components/
 
 # Ignore workshop assets by paperclip
 /public/system/workshops/
