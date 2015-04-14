@@ -43,7 +43,8 @@ staging: &staging
   pool: 5
   username: projego6_root
   password: fymO5^RpX~VH
-  socket: /tmp/mysql.sock
+  host: 127.0.0.1
+  # socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
@@ -52,5 +53,6 @@ production:
   pool: 5
   username: projego6_root
   password: fymO5^RpX~VH
-  socket: /tmp/mysql.sock
+  host: 127.0.0.1
+  # socket: /tmp/mysql.sock
   # database: db/production.sqlite3
