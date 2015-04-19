@@ -6,10 +6,11 @@
 #
 
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  # pool: 5
-  # timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
 
 # default: &default
 #   adapter: mysql
@@ -20,7 +21,7 @@ default: &default
 #   socket: '/path/to/mysql.sock'
 
 
-development:
+development: &development
   adapter: mysql2
   encoding: utf8
   database: artuur_development
@@ -47,14 +48,17 @@ staging: &staging
   # socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: projego6_artuur_production
-  pool: 5
-  username: projego6_root
-  password: fymO5^RpX~VH
-  host: 127.0.0.1
-  reconnect: true
-  port: 3306
-  # socket: /tmp/mysql.sock
-  # database: db/production.sqlite3
+  <<: *default
+  # adapter: mysql2
+  # encoding: utf8
+  # database: projego6_artuur_staging
+  # pool: 5
+  # username: projego6_root
+  # password: fymO5^RpX~VH
+  # host: 127.0.0.1
+  # encoding: utf8
+  # database: projego6_artuur_staging
+  # pool: 5
+  # username: projego6_root
+  # password: fymO5^RpX~VH
+  # host: 127.0.0.1
