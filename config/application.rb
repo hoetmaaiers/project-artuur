@@ -14,6 +14,7 @@ module ProjectArtuur
     # bower components
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
 
+    config.serve_static_assets = true
 
     # ActsAsTaggableOn.force_binary_collation = true
     # Settings in config/environments/* take precedence over those specified here.
