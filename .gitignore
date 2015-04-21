@@ -18,3 +18,8 @@
 
 # Ignore workshop assets by paperclip
 /public/system/workshops/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
