@@ -1,5 +1,5 @@
 packages:
-    yum:
-      postgresql-devel: []
-      ImageMagick-devel: []
-      ImageMagick: []
+  yum:
+    postgresql-devel: []
+    ImageMagick-devel: []
+    ImageMagick: []
