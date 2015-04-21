@@ -13,6 +13,7 @@ module ProjectArtuur
 
     # bower components
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    config.assets.precompile += %w( .svg .eot .woff .ttf)
 
     config.serve_static_assets = true
 
