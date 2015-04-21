@@ -55,6 +55,8 @@ gem 'paperclip', '~> 4.2.1'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'puma'
+
 
 group :development do
   # Use Capistrano for deployment
