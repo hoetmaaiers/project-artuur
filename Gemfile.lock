@@ -114,7 +114,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.18.1)
     puma (2.11.2)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -160,6 +159,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.10)
     sshkit (1.7.1)
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
@@ -203,12 +203,12 @@ DEPENDENCIES
   neat
   normalize-rails (~> 3.0.1)
   paperclip (~> 4.2.1)
-  pg
   puma
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
+  sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
