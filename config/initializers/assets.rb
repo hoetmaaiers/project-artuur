@@ -16,6 +16,6 @@ Rails.application.config.assets.precompile.push(Proc.new do |path|
   File.extname(path).in? [
     '.html', '.erb', '.haml',                 # Templates
     # '.png',  '.gif', '.jpg', '.jpeg',         # Images
-    # '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+    '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
   ]
 end)
