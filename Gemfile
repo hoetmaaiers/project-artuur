@@ -56,6 +56,7 @@ gem 'paperclip', '~> 4.2.1'
 # gem 'unicorn'
 gem 'puma'
 
+gem 'web-console', '~> 2.0'
 
 group :development do
   # Use Capistrano for deployment
