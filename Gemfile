@@ -15,6 +15,7 @@ gem 'haml', '~> 4.0.6'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
+gem 'cancan'
 
 gem 'enumerize'
 

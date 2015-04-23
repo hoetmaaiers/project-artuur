@@ -21,6 +21,8 @@
       %ul.nav.navbar-nav
         %li{"class" => is_active?('/admin/workshops')}
           %a{href: "/admin/workshops"} Workshops
+        %li{"class" => is_active?('/admin/users')}
+          %a{href: "/admin/users"} Users
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
