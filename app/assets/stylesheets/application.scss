@@ -16,9 +16,9 @@ $mobile: new-breakpoint(max-width 500px);
 $tablet-portrait: new-breakpoint(min-width 768px 12);
 $tablet: new-breakpoint(min-width 1024px 12);
 
-@include font-face("nexa_bold", "nexa_bold/nexa-bold", bold);
-@include font-face("basic_title", "basic_title/basictitlefont-webfont", regular);
-@include font-face("kingthings_trypewriter_2Rg", "kingthings_trypewriter/kingthings_trypewriter_2-webfont", regular);
+@include font-face("nexa_bold", "nexa_bold/nexa-bold", bold, $asset-pipeline: true);
+@include font-face("basic_title", "basic_title/basictitlefont-webfont", regular, $asset-pipeline: true);
+@include font-face("kingthings_trypewriter_2Rg", "kingthings_trypewriter/kingthings_trypewriter_2-webfont", regular, $asset-pipeline: true);
 
 $nexa-bold: 'nexa_bold', sans-serif;
 $lato: 'Lato', sans-serif;
