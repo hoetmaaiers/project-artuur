@@ -1,5 +1,5 @@
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -15,7 +15,7 @@ default: &default
 
 
 development: &development
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   database: artuur_development
   pool: 5
@@ -48,4 +48,6 @@ production:
   username: projego6_root
   password: fymO5^RpX~VH
   host: 127.0.0.1
+  reconnect: true
+  port: 3306
   # socket: /tmp/mysql.sock
