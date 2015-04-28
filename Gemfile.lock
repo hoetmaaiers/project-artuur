@@ -101,6 +101,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.6.0)
     multi_json (1.11.0)
+    mysql2 (0.3.16)
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
@@ -114,7 +115,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.18.1)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -198,10 +198,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  mysql2 (= 0.3.16)
   neat
   normalize-rails (~> 3.0.1)
   paperclip (~> 4.2.1)
-  pg
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
