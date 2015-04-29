@@ -1,5 +1,5 @@
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
   encoding: unicode
   pool: 5
 
@@ -14,16 +14,24 @@ test:
   <<: *default
   # database: db/test.sqlite3
 
-staging: &staging
-  <<: *default
+# staging: &staging
+#   <<: *default
 
 production:
-  <<: *default
-  adapter: postgresql
-  encoding: unicode
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  # adapter: postgresql
+  # encoding: unicode
+  # database: <%= ENV['RDS_DB_NAME'] %>
+  # username: <%= ENV['RDS_USERNAME'] %>
+  # password: <%= ENV['RDS_PASSWORD'] %>
+  # host: <%= ENV['RDS_HOSTNAME'] %>
+  # port: <%= ENV['RDS_PORT'] %>
 
+  adapter: mysql2
+  encoding: utf8
+  database: projego6_artuur_production
+  pool: 5
+  username: projego6_root
+  password: fymO5^RpX~VH
+  host: 127.0.0.1
+  reconnect: true
+  port: 3306

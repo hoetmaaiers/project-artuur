@@ -5,11 +5,12 @@ set :application, 'project_artuur'
 set :repo_url, 'git@github.com:hoetmaaiers/project-artuur.git'
 
 # Default branch is :master
+set :branch, 'master'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '~/public_html/staging'
-set :deploy_via, :copy
+set :deploy_to, '/home3/projego6/production'
+# set :deploy_via, :copy
 
 # set :tmp_dir, "#{fetch(:home)}/tmp"
 set :tmp_dir, "/home3/projego6/capistrano_tmp"
@@ -25,7 +26,7 @@ set :tmp_dir, "/home3/projego6/capistrano_tmp"
 
 # Default value for :pty is false
 # set :pty, true
-set :log_level, :debug
+# set :log_level, :debug
 
 SSHKit.config.command_map[:bash] = "/usr/bin/bash"
 
@@ -45,6 +46,17 @@ SSHKit.config.command_map[:bash] = "/usr/bin/bash"
 # set :keep_releases, 5
 
 namespace :deploy do
+  # desc "reload the database with seed data"
+  # task :seed do
+  #   run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  # end
+
+  desc "Restart Passenger app"
+    task :restart do
+      on roles(:app) do
+        execute "touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+      end
+    end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -55,14 +67,8 @@ namespace :deploy do
     end
   end
 
-  task :start do ; end
-  task :stop do ; end
-
-  # Touch tmp/restart.txt to tell Phusion Passenger about new version
-  # task :restart, :roles => :app, :except => { :no_release => true } do
-  #   run "touch #{File.join(current_path, 'tmp', 'restart.txt')}"
-  # end
 end
 
-# Clean-up old releases
-after "deploy:restart", "deploy:cleanup"
+# Hooks
+after "deploy", "deploy:restart"
+after "deploy", "deploy:cleanup"
