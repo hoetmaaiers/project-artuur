@@ -3,6 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .expo-section {
-  background-image: asset-url('backgrounds/expo.jpg');
+  background-image: asset_url('backgrounds/expo.jpg');
   background-size: cover;
+
+  .content-wrapper {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+  }
+
+  .title {
+    width: 307px;
+    height: 178px;
+    padding: 60px 87px;
+    margin: 0;
+
+    background-image: asset_url('expo/expo-title-bg.png');
+    font-size: 3.5em;
+    color: white;
+    font-family: $lato;
+    font-weight: 400;
+  }
+
+  .description {
+    display: inline-block;
+    padding: 20px 20px 20px 100px;
+    width: 660px;
+    height: 178px;
+    background-image: asset_url('expo/expo-description-bg.png');
+
+    font-size: 1em;
+    font-family: $lato;
+    color: white;
+    a {
+      color: white;
+    }
+  }
 }
