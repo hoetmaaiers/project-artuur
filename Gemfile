@@ -50,6 +50,9 @@ gem "bower-rails", "~> 0.9.2"
 
 gem 'paperclip', '~> 4.2.1'
 
+gem 'active_model_serializers', '~> 0.8.3'
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -14,6 +14,8 @@ GEM
       activesupport (= 4.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.8.3)
+      activemodel (>= 3.0)
     activemodel (4.1.6)
       activesupport (= 4.1.6)
       builder (~> 3.1)
@@ -122,6 +124,7 @@ GEM
     puma (2.11.2)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
+    rack-cors (0.3.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.6)
@@ -193,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.8.3)
   acts-as-taggable-on (~> 3.4)
   bootstrap-sass (~> 3.3.4.1)
   bootswatch-rails (~> 3.2.4)
@@ -215,6 +219,7 @@ DEPENDENCIES
   normalize-rails (~> 3.0.1)
   paperclip (~> 4.2.1)
   puma
+  rack-cors
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
