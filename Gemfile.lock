@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/bkeepers/dotenv.git
+  revision: 0f838e55efeff3ada216b0a31e8d60fe4a97e2be
+  specs:
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +221,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.0.0)
   devise
+  dotenv-rails!
   enumerize
   haml (~> 4.0.6)
   jbuilder (~> 2.0)

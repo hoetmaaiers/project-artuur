@@ -7,7 +7,8 @@ server 'projectartuur.be', user: 'projego6', roles: %w{app db web}#, my_property
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-
+# rails secret flow with capistrano 3 http://stackoverflow.com/a/28893260/233110
+set :linked_files, fetch(:linked_files, []).push('.env.production')
 
 # role-based syntax
 # ==================
