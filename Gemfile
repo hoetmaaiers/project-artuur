@@ -24,6 +24,7 @@ gem 'neat'
 gem 'normalize-rails', '~> 3.0.1'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'bootswatch-rails', '~> 3.2.4'
+gem 'ckeditor'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 

@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
+// require turbolinks
+//= require ckeditor/init
 //= require bootstrap-sprockets
 //= require bootstrap-tagsinput/src/bootstrap-tagsinput
-//= require turbolinks
 //= require_tree ./admin/.
